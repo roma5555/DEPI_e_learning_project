@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'Screens/courses/my_courses_list.dart';
 import 'Screens/courses/whishlist_screen.dart';
 import 'Screens/details/course_details.dart';
-import 'Screens/drawer_categories/downloads.dart';
 import 'Screens/Authentication/forgotPassword.dart';
 import 'Screens/home/NavHome/home.dart';
 import 'Screens/shopping/checkout_screen.dart';
@@ -52,8 +51,7 @@ class MyApp extends StatelessWidget {
         'Settings' : (context) => const Settings(),
         'PrivacyPolicies' : (context) => const PrivacyPolicies(),
         'About' : (context) => const About(),
-        'Downloads' : (context) => const Downloads(),
-        'JobsScreen' : (context) => const Jobs(),
+        'JobsScreen' : (context) =>   const Jobs(),
         'CoursesHome' : (context) => const CourseHome(),
         RouteNames.shoppingCart: (context) => const ShoppingCartScreen(),
         RouteNames.myCourseList:(context) => const MyCoursesList(),

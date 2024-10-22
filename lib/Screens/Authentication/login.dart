@@ -115,6 +115,10 @@ class _LoginState extends State<Login> {
                           } else if (e.code == 'wrong-password') {
                             showSnackbar(context, 'Invalid email or password.');
                           }
+                          else{
+                            showSnackbar(context, 'Invalid information');
+
+                          }
                         }
                         setState(() {
                           _loading = false;

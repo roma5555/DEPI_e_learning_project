@@ -69,14 +69,6 @@ class _CustomdrawerState extends State<Customdrawer> {
             ),
             const Customdivider(),
             Customlisttile(
-              text: 'Downloads',
-              icon: Icons.download_outlined,
-              onTap: () {
-                Navigator.pushNamed(context, 'Downloads');
-              },
-            ),
-            const Customdivider(),
-            Customlisttile(
               text: ' Logout',
               icon: Icons.logout,
               onTap: () {

@@ -26,7 +26,7 @@ class BottomOption extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Expanded(child: Icon(Icons.home, color: getSelectedColor(2),)),
-                    SizedBox(
+                   const SizedBox(
                       height: 5,
                     ),
                     Expanded(child: Text('Home',style: TextStyle(fontSize: 13,color: getSelectedColor(2)),)),
@@ -46,7 +46,7 @@ class BottomOption extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Expanded(child: Icon(Icons.cast_for_education_outlined, color: getSelectedColor(1),)),
-                    SizedBox(
+                   const SizedBox(
                       height: 5,
                     ),
                     Expanded(child: Text('My Courses',style: TextStyle(fontSize: 13,color: getSelectedColor(1)),)),

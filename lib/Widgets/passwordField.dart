@@ -27,7 +27,7 @@ class _passwordFieldState extends State<passwordField> {
       controller: widget.controller,
       cursorColor: const Color(0xFF3e48b2),
       decoration: InputDecoration(
-          suffix: InkWell(
+          suffixIcon: InkWell(
             onTap: () {
               setState(() {
                 _isObscured = !_isObscured;

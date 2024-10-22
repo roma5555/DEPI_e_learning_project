@@ -25,13 +25,6 @@ class _SettingsState extends State<Settings> {
       body: Column(
         children: [
           Customlisttile(
-            text: 'Payment Method',
-            onTap: () {
-            },
-            icon: Icons.credit_card,
-          ),
-          const Customdivider(),
-          Customlisttile(
             text: 'Privacy Policies',
             onTap: () {
               Navigator.pushNamed(context, 'PrivacyPolicies');

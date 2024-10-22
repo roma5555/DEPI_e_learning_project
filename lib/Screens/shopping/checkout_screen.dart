@@ -28,7 +28,7 @@ class CheckoutScreen extends StatelessWidget {
           children: [Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Billing Addresse",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black26),),
+              const Text("Billing Address",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black26),),
               const SizedBox(
                 height: 10,
               ),
