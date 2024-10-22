@@ -101,7 +101,7 @@ class _LoginState extends State<Login> {
                           await _authService.getUserEmail();
 
                           Navigator.of(context).pushNamedAndRemoveUntil(
-                              'HomePage', (route) => false);
+                              'CoursesHome', (route) => false);
                           if (_authService.fullname!.isNotEmpty) {
                             showSnackbar(context,
                                 'Welcome back ${_authService.fullname}');

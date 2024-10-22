@@ -84,7 +84,7 @@ class _NavigationState extends State<Navigation> {
                    User? user= await AuthService().signInWithGoogle();
                     if (user != null) {
                       Navigator.of(context)
-                          .pushNamedAndRemoveUntil('HomePage', (route) => false);
+                          .pushNamedAndRemoveUntil('CoursesHome', (route) => false);
                       showSnackbar(context, 'Welcome back, ${user.displayName}');
                     }
                   } catch (e) {

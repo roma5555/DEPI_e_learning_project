@@ -1,5 +1,6 @@
 import 'package:e_learning/shared/components/constants.dart';
 import 'package:e_learning/util/route_names.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomOption extends StatelessWidget {
@@ -16,29 +17,10 @@ class BottomOption extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+
             InkWell(
               onTap: (){
                 openScreen(context, 1);
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Expanded(child: Icon(Icons.home, color: getSelectedColor(2),)),
-                   const SizedBox(
-                      height: 5,
-                    ),
-                    Expanded(child: Text('Home',style: TextStyle(fontSize: 13,color: getSelectedColor(2)),)),
-                  ],
-                ),
-              ),
-            ),
-
-
-            InkWell(
-              onTap: (){
-                openScreen(context, 2);
               },
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -49,14 +31,14 @@ class BottomOption extends StatelessWidget {
                    const SizedBox(
                       height: 5,
                     ),
-                    Expanded(child: Text('My Courses',style: TextStyle(fontSize: 13,color: getSelectedColor(1)),)),
+                    Expanded(child: Text('Courses',style: TextStyle(fontSize: 13,color: getSelectedColor(1)),)),
                   ],
                 ),
               ),
             ),
             InkWell(
               onTap: (){
-                openScreen(context,3);
+                openScreen(context,2);
 
               },
               child: Padding(
@@ -75,7 +57,7 @@ class BottomOption extends StatelessWidget {
             ),
             InkWell(
               onTap: (){
-                openScreen(context,4);
+                openScreen(context,3);
 
               },
               child: Padding(
@@ -93,6 +75,46 @@ class BottomOption extends StatelessWidget {
               ),
             ),
 
+            InkWell(
+              onTap: (){
+                openScreen(context,4);
+
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Expanded(child: Icon(Icons.video_camera_front_outlined, color: getSelectedColor(4),)),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Expanded(child: Text('Sessions',style: TextStyle(fontSize: 13,color: getSelectedColor(4)),)),
+                  ],
+                ),
+              ),
+            ),
+
+            InkWell(
+              onTap: (){
+                openScreen(context,5);
+
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Expanded(child: Icon(CupertinoIcons.briefcase, color: getSelectedColor(5),)),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Expanded(child: Text('Jobs',style: TextStyle(fontSize: 13,color: getSelectedColor(5)),)),
+                  ],
+                ),
+              ),
+            ),
+
 
 
           ],
@@ -105,20 +127,23 @@ class BottomOption extends StatelessWidget {
   }
 
   void openScreen(BuildContext context,int selectedOptionNo){
-    String routeName = 'HomePage';
+    String routeName = 'CoursesHome';
     switch(selectedOptionNo){
 
       case 2 :
-        routeName = 'CoursesHome';
+        routeName = RouteNames.myCourseList ;
         break;
 
       case 3 :
-        routeName = RouteNames.myCourseList;
-        break;
-
-      case 4 :
         routeName = RouteNames.whishlist;
         break;
+
+      case 4:
+        routeName = 'MeetingsScreen';
+        break;
+
+      case 5:
+        routeName = 'JobsScreen';
     }
 
     Navigator.pushReplacementNamed(context, routeName);

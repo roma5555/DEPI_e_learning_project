@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_learning/Widgets/custom_appbar.dart';
 import 'package:e_learning/Widgets/custom_elevated_button.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../Widgets/passwordField.dart';
@@ -15,6 +14,7 @@ class Editprofile extends StatefulWidget {
 }
 
 class _EditprofileState extends State<Editprofile> {
+  final AuthService _authService = AuthService();
   CollectionReference users = FirebaseFirestore.instance.collection('users');
   var emailController = TextEditingController();
   var newPasswordController = TextEditingController();
@@ -85,7 +85,7 @@ class _EditprofileState extends State<Editprofile> {
                     OnPressed: () async {
                       if (_formKey.currentState!.validate()) {
                         try {
-                          changePassword(newPasswordController.text);
+                         _authService.changePassword(newPasswordController.text);
                           await AuthService().updateUser(newPasswordController.text);
                           showDialog(
                             context: context,
@@ -128,20 +128,4 @@ class _EditprofileState extends State<Editprofile> {
           )),
     );
   }
-
-  Future<void> changePassword(String newPassword) async {
-    final user = FirebaseAuth.instance.currentUser!;
-    await user.updatePassword(newPassword);
-  }
-
-  // final FirebaseFirestore db = FirebaseFirestore.instance;
-  // //final CollectionReference notesCollection = db.collection('notes');
-  //
-  // CollectionReference users = FirebaseFirestore.instance.collection('users');
-
-
-
-
-
-
 }

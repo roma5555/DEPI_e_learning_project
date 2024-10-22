@@ -1,18 +1,20 @@
 import 'package:e_learning/shared/components/constants.dart';
 import 'package:flutter/material.dart';
 
+
 class Header extends StatelessWidget {
-  const Header({super.key});
+   const Header({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Column(
-          children: const [
-            Text('welcome student',
+        const Column(
+          children:  [
+            Text('welcome Student',
             style: TextStyle(fontSize: 30.0,fontWeight: FontWeight.bold,color: Colors.white),),
             SizedBox(
               height: 10.0,

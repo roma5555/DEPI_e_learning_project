@@ -1,8 +1,9 @@
 import 'package:e_learning/Widgets/custom_elevated_button.dart';
 import 'package:e_learning/Widgets/textField.dart';
-import 'package:e_learning/helper/resetPassword.dart';
 import 'package:e_learning/helper/showSnackbar.dart';
 import 'package:flutter/material.dart';
+
+import '../../helper/AuthServices.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
@@ -12,6 +13,7 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
+  final AuthService _authService = AuthService();
   TextEditingController emailController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
@@ -71,7 +73,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               w: 310,
               color: Colors.white,
               OnPressed: () {
-                reset(context);
+                if(_formKey.currentState!.validate()){
+                  try {
+                    _authService.sendPasswordResetEmail(emailController.text);
+                    showSnackbar(context, 'Link has been sent to your email for password reset');
+                  } on Exception catch (e) {
+                    print(e);
+                  }
+                }
                 Navigator.pushNamed(context,'LoginPage');
               },
               fontSize: 24,
@@ -87,14 +96,4 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     );
   }
 
-  void reset(BuildContext context) {
-    if(_formKey.currentState!.validate()){
-      try {
-        AuthServices().sendPasswordResetEmail(emailController.text);
-        showSnackbar(context, 'Link has been sent to your email for password reset');
-      } on Exception catch (e) {
-        print(e);
-      }
-    }
-  }
 }

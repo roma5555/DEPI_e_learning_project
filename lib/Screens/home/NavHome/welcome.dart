@@ -59,7 +59,7 @@ class _WelcomeState extends State<Welcome> {
                 color: Colors.black,
                 OnPressed: () {
                   Navigator.of(context)
-                      .pushNamedAndRemoveUntil('HomePage', (route) => false);
+                      .pushNamedAndRemoveUntil('CoursesHome', (route) => false);
                 },
                 fontSize: 30),
             const Spacer(

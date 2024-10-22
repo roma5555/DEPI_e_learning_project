@@ -37,14 +37,6 @@ class _CustomdrawerState extends State<Customdrawer> {
               height: 20,
             ),
             Customlisttile(
-              text: 'Home',
-              onTap: () {
-                Navigator.popAndPushNamed(context, 'HomePage');
-              },
-              icon: Icons.home,
-            ),
-            const Customdivider(),
-            Customlisttile(
               text: 'Profile Settings',
               icon: Icons.person,
               onTap: () {

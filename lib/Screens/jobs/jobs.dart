@@ -6,6 +6,8 @@ import 'package:e_learning/Widgets/custom_list_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../shared/components/bottom_option.dart';
+
 class Jobs extends StatefulWidget {
   const Jobs({super.key});
 
@@ -180,6 +182,8 @@ class _JobsState extends State<Jobs> {
                     ),
                 ],
               ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: const BottomOption(selectedIndex: 5,),
       ),
     );
   }
@@ -190,7 +194,7 @@ class _JobsState extends State<Jobs> {
 
       setState(() {
         jobs = querySnapshot.docs.map((doc) {
-          print(doc.data()); // Print each document's data
+          print(doc.data());
           return doc.data() as Map<String, dynamic>;
         }).toList();
         jobs = jobs.where((job) => job['Title'] != null).toList();
