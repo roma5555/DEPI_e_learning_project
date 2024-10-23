@@ -63,7 +63,7 @@ class AuthService {
 
       print("User document created successfully!");
     } catch (e) {
-      print("Error signing up: $e");
+       throw e;
     }
   }
 
